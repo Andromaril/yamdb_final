@@ -60,11 +60,12 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        source: "docker-compose.yaml"
-        target: "."
+        #source: "docker-compose.yaml"
+        #target: "."
         #stack_file_name: docker-compose.yaml
         script: |
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
+            cd home/${{ secrets.USER }}
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
