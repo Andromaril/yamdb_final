@@ -27,7 +27,7 @@ jobs:
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-    needs: tests
+    #needs: tests
     steps:
       - name: Check out the repo
         # Проверка доступности репозитория Docker Hub для workflow
@@ -46,7 +46,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          file: yamdb_final/api_yamdb/Dockerfile
           tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
 
   deploy:
