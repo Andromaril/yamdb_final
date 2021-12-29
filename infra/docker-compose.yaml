@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: andromar/yamdbf:latest
+    image: andromar/yamdb_final:latest
     restart: always
     volumes:
       - static_value:/app/static/
