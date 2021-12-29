@@ -15,11 +15,11 @@ from rest_framework.pagination import (LimitOffsetPagination,
                                        PageNumberPagination)
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+from reviews.models import Category, Genre, Review, Title, User
 
 from api.filters import TitleFilter
 from api.permissions import (AdminOrReadonly, IsAdminorUpdateReadOnly,
                              IsAuthorAdminModeratorOrReadOnly)
-from reviews.models import Category, Genre, Review, Title, User
 
 from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, GetTitleSerializer,
