@@ -60,7 +60,8 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        stack_file_name: docker-compose.yaml
+        source: "docker-compose.yaml, nginx/default.conf"
+        target: "~/app/"
         script: |
             sudo docker-compose stop
             sudo docker-compose rm web
