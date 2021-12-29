@@ -62,7 +62,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         #source: "docker-compose.yaml"
         #target: "."
-        stack_file_name: docker-compose.yaml
+        #stack_file_name: docker-compose.yaml
         script: |
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
             sudo docker-compose stop
