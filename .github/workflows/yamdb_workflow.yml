@@ -60,8 +60,9 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        source: "docker-compose.yaml, nginx/default.conf"
-        target: "~"
+        #source: "docker-compose.yaml, nginx/default.conf"
+        #arget: "~"
+        stack_file_name: docker-compose.yaml
         script: |
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
             sudo docker-compose stop
