@@ -60,9 +60,10 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        source: "docker-compose.yaml, nginx/default.conf"
-        target: "~/app/"
+        #source: "docker-compose.yaml, nginx/default.conf"
+        #target: "~/app/"
         script: |
+            docke pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
